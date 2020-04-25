@@ -18,7 +18,7 @@ Log:
   # Logs each interaction of player and entity (right click & left click)
   interactor:
     enable: true
-    # How many seconds pass before the interaction is re-enlisted by a player if it interacts with a entity object multiple times.
+    # How many seconds pass before the interaction is re-enlisted by a player if it interacts with a entity multiple times.
     # 0 = disabled
     cooldown: 10
 # Messages for the /advancedlogreload command

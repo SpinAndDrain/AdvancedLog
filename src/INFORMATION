@@ -1,0 +1,14 @@
+The source code is documented by a comment above each method.
+
+IMPORTANT: If you want to write a log into a log file with de.spinanddrain.advancedlog.logging.Log#log(String, boolean) or
+          de.spinanddrain.advancedlog.logging.Log#log(String) this may NOT work if you run the method asynchronously.
+          See my event listener de.spinanddrain.advancedlog.listeners.ChatListener as example how to handle this problem.
+          
+<==================================================================================================================>
+Events:
+
+LogPerpetuateEvent
+This event is called before a log message gets written into a file. If you cancel it,
+the log message will not be written into the file.
+
+<==================================================================================================================>

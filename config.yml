@@ -1,0 +1,29 @@
+# Configuration file of AdvancedLog 2.0
+Updater:
+  # Check update on startup
+  check: true
+Log:
+  # Logs all chat messages
+  chat:
+    enable: true
+  # Logs all breaked and placed blocks
+  block:
+    enable: true
+  # Logs all entered commands
+  command:
+    enable: true
+  # Logs each player join and quit
+  connection:
+    enable: true
+  # Logs each interaction of player and entity (right click & left click)
+  interactor:
+    enable: true
+    # How many seconds pass before the interaction is re-enlisted by a player if it interacts with a entity object multiple times.
+    # 0 = disabled
+    cooldown: 10
+# Messages for the /advancedlogreload command
+Messages:
+  prefix: '&7[&9AdvancedLog&7]'
+  no-permission: '&cYou do not have permission to perform this command.'
+  reloading: '&eReloading...'
+  reloaded: '&aReloaded!'

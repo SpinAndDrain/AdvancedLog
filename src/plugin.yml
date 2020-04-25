@@ -1,0 +1,9 @@
+name: AdvancedLog
+author: SpinAndDrain
+version: 2.0
+main: de.spinanddrain.advancedlog.AdvancedLog
+commands:
+  advancedlogreload:
+    aliases:
+    - alreload
+    - alrl

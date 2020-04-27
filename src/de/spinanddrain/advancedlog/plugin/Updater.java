@@ -10,15 +10,10 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.Plugin;
 
 public class Updater {
-
-	/*
-	 * key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=
-	 * https://api.spigotmc.org/legacy/update.php?resource=60569&key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=60569
-	 */
 	
 	private Plugin plugin;
 	private final String resource = "64268";
-	public static final String prefix = "§7[§9AdvancedLog§7] §r";
+	public static final String prefix = "Â§7[Â§9AdvancedLogÂ§7] Â§r";
 	
 	public Updater(Plugin plugin) {
 		this.plugin=plugin;
@@ -33,7 +28,7 @@ public class Updater {
 	@Deprecated
 	public boolean checkUpdate() {
 		ConsoleCommandSender c = plugin.getServer().getConsoleSender();
-		c.sendMessage(prefix+"§eChecking for updates...");
+		c.sendMessage(prefix+"Â§eChecking for updates...");
 		try {
             HttpURLConnection con = (HttpURLConnection) new URL("https://api.spigotmc.org/legacy/update.php?resource="+resource+"key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4").openConnection();
 //            con.setDoOutput(true);
@@ -41,15 +36,15 @@ public class Updater {
 //            con.getOutputStream().write(("key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource="+resource).getBytes("UTF-8"));
             String version = new BufferedReader(new InputStreamReader(con.getInputStream())).readLine();
             if(version.equalsIgnoreCase(plugin.getDescription().getVersion())) {
-            	c.sendMessage(prefix+"§eNo updates found.");
+            	c.sendMessage(prefix+"Â§eNo updates found.");
             	return false;
             } else {
-            	c.sendMessage(prefix+"§eA newer version is available: §b"+version);
-            	c.sendMessage(prefix+"§eDownload: §bhttps://bit.ly/2TilRD6");
+            	c.sendMessage(prefix+"Â§eA newer version is available: Â§b"+version);
+            	c.sendMessage(prefix+"Â§eDownload: Â§bhttps://bit.ly/2TilRD6");
             	return true;
             }
         }catch(IOException e) {
-        	c.sendMessage(prefix+"§cAn error occurred while searching for updates!");
+        	c.sendMessage(prefix+"Â§cAn error occurred while searching for updates!");
         	return false;
         }
 	}
@@ -61,7 +56,7 @@ public class Updater {
 	 */
 	public void check(boolean debug) {
 		ConsoleCommandSender c = plugin.getServer().getConsoleSender();
-		c.sendMessage(prefix+"§eChecking for updates...");
+		c.sendMessage(prefix+"Â§eChecking for updates...");
 		for(int i = 0; i < 2; i++) {
 			try {
 				HttpURLConnection con = (HttpURLConnection) (i == 0 ? new URL("https://api.spigotmc.org/legacy/update.php?resource=").openConnection() : new URL("https://api.spigotmc.org/legacy/update.php?resource="+resource+"key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4").openConnection());
@@ -72,11 +67,11 @@ public class Updater {
 				}
 				String version = new BufferedReader(new InputStreamReader(con.getInputStream())).readLine();
 				if(version.equalsIgnoreCase(plugin.getDescription().getVersion())) {
-					c.sendMessage(prefix+"§eNo updates found.");
+					c.sendMessage(prefix+"Â§eNo updates found.");
 	            	return;
 	            } else {
-	            	c.sendMessage(prefix+"§eA newer version is available: §b"+version);
-	            	c.sendMessage(prefix+"§eDownload: §bhttps://bit.ly/2TilRD6");
+	            	c.sendMessage(prefix+"Â§eA newer version is available: Â§b"+version);
+	            	c.sendMessage(prefix+"Â§eDownload: Â§bhttps://bit.ly/2TilRD6");
 	            	return;
 	            }
 			} catch(Exception e) {
@@ -87,7 +82,7 @@ public class Updater {
 				continue;
 			}
 		}
-		c.sendMessage(prefix+"§cAn error occurred while searching for updates!");
+		c.sendMessage(prefix+"Â§cAn error occurred while searching for updates!");
 	}
 	
 }

@@ -1,6 +1,6 @@
 name: AdvancedLog
 author: SpinAndDrain
-version: 2.0
+version: 2.1
 main: de.spinanddrain.advancedlog.AdvancedLog
 commands:
   advancedlogreload:

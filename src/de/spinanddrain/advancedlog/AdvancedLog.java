@@ -52,35 +52,25 @@ public class AdvancedLog extends JavaPlugin {
 	public void onEnable() {
 		instance = this;
 		sessions = new HashMap<Player, LogSession>();
-		
 		prepareFiles();
-		
 		prepareConfiguration();
-		
 		prepareHook();
-		
 		getLogger().log(Level.INFO, "Starting AdvancedLog...");
-		
 		String softVer = getSoftVersion();
 		if(!isValidSoftVersion()) {
 			getLogger().log(Level.WARNING, "Your server version is unknown to AdvancedLog. Please beware that this can cause errors and/or corrupt your logs!");
 		}
-		
 		getServer().getConsoleSender().sendMessage("§7__________[§9AdvancedLog§7]__________");
 		getServer().getConsoleSender().sendMessage(" ");
 		getServer().getConsoleSender().sendMessage("§7   Current Version: §b" + getDescription().getVersion());
 		getServer().getConsoleSender().sendMessage("§7   Plugin by §cSpinAndDrain");
 		getServer().getConsoleSender().sendMessage("§7   Your Serverversion: §b" + (softVer != null ? softVer : "?"));
 		getServer().getConsoleSender().sendMessage("§7_________________________________");
-	
 		if(checkForUpdate) {
 			new Updater(this).check(false);
 		}
-		
 		prepareRequiredListeners();
-		
 		getCommand("advancedlogreload").setExecutor(new ReloadCommand());
-		
 		verifyOnlinePlayers();
 	}
 	
@@ -340,6 +330,8 @@ public class AdvancedLog extends JavaPlugin {
 			return "1.14";
 		} else if(ver.startsWith("1.15")) {
 			return "1.15";
+		} else if(ver.startsWith("1.16")) {
+			return "1.16";
 		} else
 			return null;
 	}

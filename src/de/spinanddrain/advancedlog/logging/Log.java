@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -109,10 +110,8 @@ public class Log implements Closeable {
 	 * 
 	 */
 	public void openStream() throws IOException {
-		if(writer != null) {
-			this.close();
-		}
-		writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)));
+		this.close();
+		writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8));
 		if(header != null && file.length() == 0) {
 			String saved = prefix;
 			prefix = new String();
